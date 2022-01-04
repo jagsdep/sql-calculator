@@ -233,4 +233,46 @@ ALTER TABLE ONLY public.students
 --
 -- PostgreSQL database dump complete
 --
+------Part 4-----
+
+--Problem 1
+--What is the significance of transactions in SQL? When would you want to use a transaction? What is the syntax for executing a transaction?
+
+--Result
+--Transactions is very important and it is a group of commands that change the data stored in database. 
+--Atomic - all or nothing: It makes sure that either all the commands succeed or none.
+--Guarantee of record: It also guarantees all the updates made by transaction database is logged in the permanent storage before the transaction is reported completely
+--Visibility of updates: the updates gets visible only after the transactions is completed.
+
+--The transaction is used to avoid inconsistent queries.
+
+--The process used to execute the transaction 
+--1) Begin a transaction.
+--2) Process database commands
+--3) Checks for errors
+    --if errors occurred, rollback the transaction,
+    --else, commit the transaction
+--The syntax used to execute the transaction
+--SELECT * FROM 
+--BEGIN;
+--SAVEPOINT FirstUpdate;
+    --if incorrect update
+--Rollback to FirstUpdate;
+--Commit
+
+
+--Problem 2
+--What is the difference between implicit and explicit type conversion in SQL? Give an example of how you can execute explicit type conversion using SQL syntax.
+
+--Result
+--In implicit conversion the datatype is converted automatically whereas in explicit conversion the conversion function is used to convert to another data type.
+--Readability is ambiguous in implicit conversion whereas its clear and easy in explicit conversion
+-- Due to the ambiguity in implicit conversion the performance can have negative impact whereas the perormance is better in explicit.
+-- Portability is low in implicit conversion and high on explicit conversion.
+--Hence, explicit conversion is preferred over implicit conversion.
+
+
+
+
+
 
