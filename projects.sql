@@ -97,6 +97,49 @@ title            | id | grade
  Snake Game      |  1 |    64
 
 
+------------Filtering Using Aggregates
+--Problem 1
+
+
+------------Working with Strings---------------------
+--Problem 1
+SELECT CONCAT('Congrats',' ',student_github,' ', 'you received',' ',grade, ' ', 'on',' ', project_title) AS grades FROM grades WHERE (grade) > 90;
+
+--Result:
+ grades                       
+----------------------------------------------------
+ Congrats sdevelops you received 100 on Snake Game
+ Congrats tcodes you received 100 on Snake Game
+ Congrats tcodes you received 100 on Snake Game
+ Congrats rpractices you received 100 on Snake Game
+ Congrats ctypes you received 97 on Snake Game
+ Congrats wcodes you received 96 on Snake Game
+
+ --Problem 2
+ SELECT student_github, CONCAT('Your assignment needs improvement, you received',' ',grade, ' ', 'on',' ', project_title) AS grades FROM grades WHERE (grade) <= 70;
+
+ --Result:
+st udent_github |                               grades                                
+----------------+----------------------------------------------------------------------
+ jhacks         | Your assignment needs improvement, you received 10 on News Aggregator
+ sdevelops      | Your assignment needs improvement, you received 50 on News Aggregator
+ jhacks         | Your assignment needs improvement, you received 2 on Snake Game
+ alearns        | Your assignment needs improvement, you received 0 on Snake Game
+ banalyzes      | Your assignment needs improvement, you received 0 on Snake Game
+ lgifs          | Your assignment needs improvement, you received 50 on Snake Game
+ casks          | Your assignment needs improvement, you received 64 on Snake Game
+
+ --Problem 3
+ SELECT CONCAT(LOWER(first_name),'-',LOWER(last_name)) AS full_ID FROM students;
+ --Result:
+      full_id     
+-----------------
+ jane-hacker
+ sarah-developer
+
+
+
+
 
 
 
